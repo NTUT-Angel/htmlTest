@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Living Documentation</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+      /* 左邊選單樣式 */
+      #sidebar {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 400px;
+        background-color: #f1f1f1;
+        overflow-y: auto;
+        padding-top: 50px;
+        position: fixed; /* 將選單設置為固定位置 */
+        transition: width 0.3s ease; /* 添加過渡效果 */
+      }
+
+      /* 右邊內容樣式 */
+      #content {
+        flex: 1;
+        margin-left: 400px; /* 為了避免內容被遮蓋，添加左邊距 */
+        padding: 20px;
+        overflow-y: auto;
+        transition: margin-left 0.3s; /* 添加過渡效果 */
+      }
+
+      .sidebar_status {
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          display: inline-block;
+          margin-right: 4px;
+        }
+
+      .title {
+          cursor: pointer;
+          padding: 10px;
+          background-color: #ddd;
+          }
+
+        /* 漢堡選單樣式 */
+        .hamburger-menu {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 垂直置中 */
+        align-items: center; /* 水平置中 */
+        cursor: pointer;
+      }
+
+      .hamburger-menu span {
+          width: 100%;
+          height: 2px;
+          background-color: #333;
+      }
+
+      /* 按鈕的樣式 */
+      #toggleButton {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: 1px solid #333;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+      }
+
+      #toggleButton span {
+        width: 20px;
+        height: 2px;
+        background-color: #333;
+        margin: 2px 0;
+        display: block;
+      }
+
+      /* 調整 summary 展開的縮排 */
+    summary {
+        text-indent: 0; /* 初始縮排為 0 */
+    }
+
+    details details summary {
+        text-indent: 20px; /* 第二層縮排為 20px */
+    }
+
+    details details details summary {
+        text-indent: 40px; /* 第三層縮排為 40px */
+    }
+
+    details details details div {
+        text-indent: 60px; /* 第四層縮排為 60px */
+    }
+
+    details details div {
+        text-indent: 40px; /* 第二層縮排為 40px */
+    }
+
+    .color-box {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    .green { background-color: green; }
+    .red { background-color: red; }
+    .gray { background-color: gray; }
+
+    .chart-container {
+    position: relative;
+    width: 300px;
+    height: 400px; /* 調整圖表容器的高度，以避免標題重疊在圖表上 */
+    }
+
+    .chart-title {
+    position: absolute;
+    top: -50px; /* 將標題移動到圖表正上方並離圖表更遠 */
+    left: 50%; /* 將標題水平置中 */
+    transform: translateX(-50%); /* 調整標題的位置 */
+    }
+  </style>
+</head>
+<body>
+  <!-- 左邊選單連結 -->
+  <div id="sidebar">
+    <div id="toggleButton" onclick="toggleSidebar()">
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <details>
+        <summary class="title" onclick="loadPage('./Regression Test/Regression Test.html')">Regression Test<br>
+            <span style="margin-right: 5px;">
+                <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                3 Passed
+            </span>
+            <span style="margin-right: 5px;">
+                <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                1 Failed
+            </span>
+            <span>
+                <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                0 Others
+            </span>
+        </summary>
+        <details>
+            <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746.html')">Suite DCT-43746<br>
+                <span style="margin-right: 5px; margin-left: 20px;">
+                    <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                    3 Passed
+                </span>
+                <span style="margin-right: 5px;">
+                    <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                    1 Failed
+                </span>
+                <span>
+                    <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                    0 Others
+                </span>
+            </summary>
+            <details>
+                <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/DCT-43746 Add Make.html')">Feature DCT-43746 Add Make<br>
+                    <span style="margin-right: 5px; margin-left: 40px;">
+                        <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                        3 Passed
+                    </span>
+                    <span style="margin-right: 5px;">
+                        <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                        0 Failed
+                    </span>
+                    <span>
+                        <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                        0 Others
+                    </span>
+                </summary>
+                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario Outline Make can not be added with duplicate name.html')">
+                  <span>Scenario Outline: Make can not be added with&nbsp;</span><br>
+                  <span style="margin-right: 5px; margin-left: 60px;">duplicate name</span><br>
+                  <span style="margin-right: 5px; margin-left: 60px;">
+                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                      1 Passed
+                  </span>
+                  <span style="margin-right: 5px;">
+                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                      0 Failed
+                  </span>
+                  <span>
+                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                      0 Others
+                  </span>
+                </div>
+                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario A make can be created with only single character in all fields.html')">
+                  <span>Scenario: A make can be created with only single&nbsp;</span><br>
+                  <span style="margin-right: 5px; margin-left: 60px;">character in all fields</span><br>
+                  <span style="margin-right: 5px; margin-left: 60px;">
+                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                      1 Passed
+                  </span>
+                  <span style="margin-right: 5px;">
+                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                      0 Failed
+                  </span>
+                  <span>
+                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                      0 Others
+                  </span>
+                </div>
+                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario A make with single space character in the name cannot be created.html')">
+                  <span>Scenario: A make with single space character in&nbsp;</span><br>
+                  <span style="margin-right: 5px; margin-left: 60px;">the name cannot be created</span><br>
+                  <span style="margin-right: 5px; margin-left: 60px;">
+                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                      1 Passed
+                  </span>
+                  <span style="margin-right: 5px;">
+                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                      0 Failed
+                  </span>
+                  <span>
+                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                      0 Others
+                  </span>
+                </div>
+            </details>
+            <details>
+                <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Edit Make/DCT-43746 Edit Make.html')">Feature DCT-43746 Edit Make<br>
+                    <span style="margin-right: 5px; margin-left: 40px;">
+                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                      0 Passed
+                    </span>
+                    <span style="margin-right: 5px;">
+                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                      1 Failed
+                    </span>
+                    <span>
+                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                      0 Others
+                    </span>
+                  </summary>
+                  <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Edit Make/Scenario Edit a make name failed because without click save button.html')">
+                    <span>Scenario: Edit a make name failed because&nbsp;</span><br>
+                    <span style="margin-right: 5px; margin-left: 60px;">without click save button</span><br>
+                    <span style="margin-right: 5px; margin-left: 60px;">
+                        <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                        0 Passed
+                    </span>
+                    <span style="margin-right: 5px;">
+                        <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                        1 Failed
+                    </span>
+                    <span>
+                        <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                        0 Others
+                    </span>
+                  </div>
+            </details>
+        </details>
+    </details>
+  </div>
+
+  <div id="content">
+      <!-- 預設顯示的內容 -->
+      <h2>dcTrack Living Documentation</h2>
+      <p>點選左邊選單選擇測試。</p>
+      <div>
+        <p style="font-size: 20px; color: rgb(23, 26, 25); display: inline;">Regression Test</p>
+        <span style="margin-left: 10px;">
+          <div class="color-box green" style="display: inline-block; margin-right: 5px;"></div> 3 Passed
+        </span>
+        <span style="margin-left: 10px;">
+          <div class="color-box red" style="display: inline-block; margin-right: 5px;"></div> 1 Failed
+        </span>
+        <span style="margin-left: 10px;">
+          <div class="color-box gray" style="display: inline-block; margin-right: 5px;"></div> 0 Others
+        </span>
+      </div>
+  </div>
+
+  <script>
+    var ctx = document.getElementById('testOverviewChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Passed', 'Failed', 'Others'],
+        datasets: [{
+          label: '# of Tests',
+          data: [3, 1, 0],
+          backgroundColor: [
+            'rgba(0, 255, 0, 0.5)',
+            'rgba(255, 0, 0, 0.5)',
+            'rgba(128, 128, 128, 0.5)'
+          ],
+          borderColor: [
+            'rgba(0, 255, 0, 1)',
+            'rgba(255, 0, 0, 1)',
+            'rgba(128, 128, 128, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: false,
+        legend: {
+          position: 'bottom'
+        },
+        title: {
+          display: false
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        }
+      }
+    });
+
+    var sidebarExpanded = true;
+    function toggleSidebar() {
+      var sidebar = document.getElementById('sidebar');
+      var content = document.getElementById('content');
+      var ds = document.querySelectorAll('details');
+
+      if (sidebarExpanded) {
+          ds[0].style.display = 'none'; // 隱藏選項
+          sidebar.style.width = '100px';
+          content.style.marginLeft = '100px';
+      } else {
+          sidebar.style.width = '400px';
+          content.style.marginLeft = '400px';
+          setTimeout(function() {
+              ds[0].style.display = 'block'; // 顯示選項
+          }, 250);
+      }
+      sidebarExpanded = !sidebarExpanded;
+    }
+
+    // 頁面載入函式
+    function loadPage(page) {
+    // 使用fetch載入指定頁面
+    fetch(page)
+    .then(response => response.text())
+    .then(data => {
+        // 提取<body>內容
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const bodyContent = doc.body.innerHTML;
+
+        // 將提取的內容放入右邊的內容區域
+        document.getElementById('content').innerHTML = bodyContent;
+
+        // 重新初始化圖表
+        var ctx = document.getElementById('testOverviewChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+            labels: ['Passed', 'Failed', 'Others'],
+            datasets: [{
+                label: '# of Tests',
+                data: [3, 1, 0],
+                backgroundColor: [
+                'rgba(0, 255, 0, 0.5)',
+                'rgba(255, 0, 0, 0.5)',
+                'rgba(128, 128, 128, 0.5)'
+                ],
+                borderColor: [
+                'rgba(0, 255, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(128, 128, 128, 1)'
+                ],
+                borderWidth: 1
+            }]
+            },
+            options: {
+            responsive: false,
+            legend: {
+                position: 'bottom'
+            },
+            title: {
+                display: false
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+            }
+        });
+    })
+    .catch(error => {
+        console.error('載入頁面時發生錯誤:', error);
+    });
+    }
+
+    function goToLog(step) {
+        location.href = "./Regression Test/DCT-43746/DCT-43746 Add Make/dctrack report/log.html#s1-s1-s1-s1-"+step;
+    }
+
+    function goToLog2(step) {
+        location.href = "./Regression Test/DCT-43746/DCT-43746 Edit Make/dctrack error report/log.html#s1-s1-s1-s1-"+step;
+    }
+  </script>
+</body>
+</html>

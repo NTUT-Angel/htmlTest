@@ -1,0 +1,79 @@
+table.bordered {
+    border-collapse: collapse;
+    table-layout: fixed
+}
+
+table.bordered th, table.bordered td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center; /* 將表格內的文字置中 */
+}
+
+.default_tags{
+    background-color:#501e7e;
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center
+}
+
+.tags{
+    background-color:#1e537e;
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center
+}
+
+.broad {
+    border: 1px solid black; /* 將標題下的內容用方框包起來 */
+    padding: 8px;
+    margin: 8px;
+}
+
+.documentation {
+    color: blue; /* 將文字顏色設定為藍色 */
+}
+
+.bdd {
+    color: orange; /* 將文字顏色設定為藍色 */
+}
+
+.bdd_a:hover {
+    color: rgb(0, 190, 155); /* 移到文字上時改變為紅色 */
+    cursor: pointer; /* 將滑鼠游標設定為手指指示可點擊 */
+}
+
+.st {
+    border: 1px solid rgb(216, 20, 160);
+    color: red; /* 將文字顏色設定為藍色 */
+}
+
+.status{
+    background-color:rgb(92, 255, 47);
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center
+}
+
+.status_e{
+    background-color:red;
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center
+}
+
+.status_s{
+    background-color:gray;
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center
+}

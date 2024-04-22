@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Living Documentation</title>
+</head>
+<body>
+  <p>Force Tags: <span class="default_tags">DCT-43746</span> <span class="default_tags">Models-Library</span></p>
+        <p>Default Tags: <span class="default_tags">DCT-43746</span></p>
+        <h2><span class="status">PASS</span> Feature: Add make</h2>
+        <div class="broad"><p><span class="documentation">Documentation: An acceptance criteria of Adding Make<br>
+            ...    In order to manage Make<br>
+            ...    As an dctrack user<br>
+            ...    I want to adding a Make</span></p></div>
+
+        <h2><span class="status">PASS</span> Background:</h2>
+        <div class="broad"><p onclick="goToLog('t1-k1')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Given</span> I am ready to manage makes</p></div>
+
+        <p>Tags: <span class="tags">TMD-4586</span> <span class="tags">TMD-4587</span></p>
+        <h2><span class="status">PASS</span> Scenario Outline: Make can not be added with duplicate name</h2>
+        <div class="broad">
+            <p onclick="goToLog('t1-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">When</span> I add a make with name &lt;duplicateMakeName&gt;</p>
+            <p onclick="goToLog('t1-k3')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Then</span> Make with duplicate name &lt;duplicateMakeName&gt; cannot be created</p>
+            <p onclick="goToLog('t1-k4')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> Teardown For TMD-4586_87</p>
+            <p>Examples:</p>
+            <table class="bordered">
+                <tr>
+                    <th>duplicateMakeName</th>
+                </tr>
+                <tr>
+                    <td>${DBExistingMake4586}</td>
+                </tr>
+                <tr>
+                    <td>${upperCaseOfDBExistingMake4586}</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>Tags: <span class="tags">TMD-4583</span></p>
+        <h2><span class="status">PASS</span> Scenario: A make can be created with only single character in all fields</h2>
+        <div class="broad">
+            <p onclick="goToLog('t3-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">When</span> I create a make with following data</p>
+            <table class="bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>Alias</th>
+                    <th>Notes</th>
+                    <th>Cutomer Service</th>
+                    <th>Technical Support</th>
+                    <th>Account Number</th>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                </tr>
+            </table>
+            <p onclick="goToLog('t3-k3')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Then</span> Following make is created</p>
+            <table class="bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>Alias</th>
+                    <th>Notes</th>
+                    <th>Cutomer Service</th>
+                    <th>Technical Support</th>
+                    <th>Account Number</th>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                </tr>
+            </table>
+            <p onclick="goToLog('t3-k4')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> Teardown For TMD-4583</p>
+        </div>
+
+        <p>Tags: <span class="tags">TMD-4582</span></p>
+        <h2><span class="status">PASS</span> Scenario: A make with single space character in the name cannot be created</h2>
+        <div class="broad">
+            <p onclick="goToLog('t4-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Given</span> I am ready to add a make</p>
+            <p onclick="goToLog('t4-k3')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">When</span> I give make name ${SPACE}</p>
+            <p onclick="goToLog('t4-k4')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Then</span> I cannot add the make</p>
+            <p onclick="goToLog('t4-k5')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> Teardown For TMD-4582</p>
+        </div>
+</body>
+<script>
+function goToLog(step) {
+  location.href = "./dctrack report/log.html#s1-s1-s1-s1-"+step;
+}
+</script>

@@ -141,6 +141,8 @@
         </div>
     </div>
 
+    <div class="title" onclick="loadPage('Home Default Page.html')">Home<br>
+    </div>
     <details>
         <summary class="title" onclick="loadPage('./Regression Test/Regression Test.html')">Regression Test<br>
             <span style="margin-right: 5px;">
@@ -275,6 +277,26 @@
       <!-- 預設顯示的內容 -->
       <h2>dcTrack Living Documentation</h2>
       <p>點選左邊選單選擇測試。</p>
+      <h3>Detail:</h3>
+      <p style="font-size: 25px; color: rgb(114, 167, 35);">Suite: 1</p>
+      <p style="font-size: 25px; color: rgb(27, 180, 149);">Feature: 2</p>
+      <p style="font-size: 25px; color: rgb(142, 27, 180);">Scenarios: 4</p>
+      <table class="bordered">
+        <tr>
+          <th>Test Type</th>
+          <th>Suite</th>
+          <th>Number Of Features</th>
+          <th>Number Of Scenarios</th>
+        </tr>
+        <tr>
+          <td>Regression Test</td>
+          <td>DCT-43746</td>
+          <td>2</td>
+          <td>4</td>
+        </tr>
+      </table>
+
+      <h3>Test status:</h3> 
       <div>
         <p style="font-size: 20px; color: rgb(23, 26, 25); display: inline;">Regression Test</p>
         <span style="margin-left: 10px;">
@@ -287,9 +309,9 @@
           <div class="color-box gray" style="display: inline-block; margin-right: 5px;"></div> 0 Others
         </span>
       </div>
-  </div>
+    </div>
 
-  <script>
+    <script>
     var ctx = document.getElementById('testOverviewChart').getContext('2d');
     var myChart = new Chart(ctx, {
       type: 'doughnut',

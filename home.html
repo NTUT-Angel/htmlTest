@@ -6,21 +6,32 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <style>
       /* 左邊選單樣式 */
-      #sidebar {
+      #hamburger-menu-background {
         left: 0;
         top: 0;
-        height: 100%;
+        height: 50px;
+        width: 400px;
+        background-color: #f1f1f1;
+        position: fixed; /* 將選單設置為固定位置 */
+        transition: width 0.3s ease; /* 添加過渡效果 */
+      }
+
+      /* 左邊選單樣式 */
+      #sidebar {
+        left: 0;
+        top: 50px;
+        height: 90%;
         width: 400px;
         background-color: #f1f1f1;
         overflow-y: auto;
-        padding-top: 50px;
+        /* padding-top: 50px; */
         position: fixed; /* 將選單設置為固定位置 */
         transition: width 0.3s ease; /* 添加過渡效果 */
       }
 
       /* 右邊內容樣式 */
       #content {
-        flex: 1;
+        /* flex: 1; */
         margin-left: 400px; /* 為了避免內容被遮蓋，添加左邊距 */
         padding: 20px;
         overflow-y: auto;
@@ -132,17 +143,18 @@
 </head>
 <body>
   <!-- 左邊選單連結 -->
-  <div id="sidebar">
+  <div id="hamburger-menu-background">
     <div id="toggleButton" onclick="toggleSidebar()">
-        <div class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+      <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
     </div>
+  </div>
 
-    <div class="title" onclick="loadPage('Home Default Page.html')">Home<br>
-    </div>
+  <div id="sidebar">
+    <div class="title" onclick="loadPage('Home Default Page.html')">Home<br></div>
     <details>
         <summary class="title" onclick="loadPage('./Regression Test/Regression Test.html')">Regression Test<br>
             <span style="margin-right: 5px;">
@@ -205,8 +217,8 @@
                   </span>
                 </div>
                 <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario A make can be created with only single character in all fields.html')">
-                  <span>Scenario: A make can be created with only single&nbsp;</span><br>
-                  <span style="margin-right: 5px; margin-left: 60px;">character in all fields</span><br>
+                  <span>Scenario: A make can be created with only&nbsp;</span><br>
+                  <span style="margin-right: 5px; margin-left: 60px;">single character in all fields</span><br>
                   <span style="margin-right: 5px; margin-left: 60px;">
                       <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
                       1 Passed
@@ -221,8 +233,8 @@
                   </span>
                 </div>
                 <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario A make with single space character in the name cannot be created.html')">
-                  <span>Scenario: A make with single space character in&nbsp;</span><br>
-                  <span style="margin-right: 5px; margin-left: 60px;">the name cannot be created</span><br>
+                  <span>Scenario: A make with single space character&nbsp;</span><br>
+                  <span style="margin-right: 5px; margin-left: 60px;">in the name cannot be created</span><br>
                   <span style="margin-right: 5px; margin-left: 60px;">
                       <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
                       1 Passed
@@ -350,6 +362,7 @@
 
     var sidebarExpanded = true;
     function toggleSidebar() {
+      var hamburger_menu_back = document.getElementById('hamburger-menu-background');
       var sidebar = document.getElementById('sidebar');
       var content = document.getElementById('content');
       var ds = document.querySelectorAll('details');
@@ -358,12 +371,14 @@
           ds[0].style.display = 'none'; // 隱藏選項
           sidebar.style.width = '100px';
           content.style.marginLeft = '100px';
+          hamburger_menu_back.style.width = '100px';
       } else {
           sidebar.style.width = '400px';
           content.style.marginLeft = '400px';
+          hamburger_menu_back.style.width = '400px';
           setTimeout(function() {
               ds[0].style.display = 'block'; // 顯示選項
-          }, 250);
+          }, 220);
       }
       sidebarExpanded = !sidebarExpanded;
     }

@@ -3,6 +3,7 @@
 <head>
   <title>Living Documentation</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../styles.css">
   <style>
     .color-box {
       display: inline-block;
@@ -34,10 +35,33 @@
 </head>
 <body>
   <h2>DCT-43746 Refactor the Makes UI to be less confusing</h2>
+  <h3>Suite Detail:</h3>
   <p style="font-size: 25px; color: rgb(27, 180, 149);">Feature: 2</p>
   <p style="font-size: 25px; color: rgb(142, 27, 180);">Scenarios: 4</p>
-  <h3>Feature status:</h3>
+  <table class="bordered">
+      <tr>
+          <th>Feature</th>
+          <th>Scenario</th>
+      </tr>
+      <tr>
+          <td>DCT-43746 Add Make</td>
+          <td>Scenario Outline: Make can not be added with duplicate name</td>
+      </tr>
+      <tr>
+          <td>DCT-43746 Add Make</td>
+          <td>Scenario: A make can be created with only single character in all fields</td>
+      </tr>
+      <tr>
+          <td>DCT-43746 Add Make</td>
+          <td>Scenario: A make with single space character in the name cannot be created</td>
+      </tr>
+      <tr>
+          <td>DCT-43746 Edit Make</td>
+          <td>Scenario: Edit a make name failed because without click save button</td>
+      </tr>
+  </table>
   
+  <h3>Feature Status:</h3>
   <div>
     <p style="font-size: 20px; color: rgb(23, 26, 25); display: inline;">DCT-43746 Add Make</p>
     <span style="margin-left: 10px;">

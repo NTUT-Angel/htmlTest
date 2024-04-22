@@ -3,6 +3,7 @@
 <head>
   <title>Living Documentation</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../styles.css">
   <style>
     .color-box {
       display: inline-block;
@@ -38,10 +39,29 @@
   </style>
 </head>
 <body>
-  <h2>Regression Test</h2>
+  <h2>Regression Test:</h2>
+  <h3>Detail:</h3>
   <p style="font-size: 25px; color: rgb(114, 167, 35);">Suite: 1</p>
   <p style="font-size: 25px; color: rgb(27, 180, 149);">Feature: 2</p>
   <p style="font-size: 25px; color: rgb(142, 27, 180);">Scenarios: 4</p>
+  <table class="bordered">
+    <tr>
+        <th>Suite</th>
+        <th>Feature</th>
+        <th>Number Of Scenarios</th>
+    </tr>
+    <tr>
+        <td>DCT-43746</td>
+        <td>DCT-43746 Add Make</td>
+        <td>3</td>
+    </tr>
+    <tr>
+      <td>DCT-43746</td>
+      <td>DCT-43746 Edit Make</td>
+      <td>1</td>
+    </tr>
+  </table>
+
   <h3>Suite status:</h3> 
   <div>
     <p style="font-size: 20px; color: rgb(23, 26, 25); display: inline;">DCT-43746</p>
@@ -57,29 +77,6 @@
   </div>
 
   <br><br><br>
-  <!-- <div class="broad"> -->
-    <!-- <div class="charts-container">
-      <div class="chart-container">
-        <h3 class="chart-title">All test runs status</h3>
-        <canvas id="testOverviewChart"></canvas>
-        <br>
-        <div>
-          <div class="color-box green"></div> 3 Passed
-          <div class="color-box red"></div> 1 Failed
-          <div class="color-box gray"></div> 0 Others
-        </div>
-      </div>
-    
-      <div class="chart-container">
-        <h3 class="chart-title">Another chart title</h3>
-        <canvas id="anotherChart"></canvas>
-        <br>
-        <div>
-
-        </div>
-      </div>
-    </div> -->
-    
     <div class="chart-container">
       <h3 class="chart-title">All test runs status</h3>
       <canvas id="testOverviewChart"></canvas>
@@ -91,7 +88,6 @@
       </div>
     </div>
 
-  <!-- </div> -->
 </body>
 
 <script>

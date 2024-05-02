@@ -106,12 +106,20 @@
         text-indent: 40px; /* 第三層縮排為 40px */
     }
 
+    details details div {
+        text-indent: 40px; /* 第二層縮排為 40px */
+    }
+
     details details details div {
         text-indent: 60px; /* 第四層縮排為 60px */
     }
 
-    details details div {
-        text-indent: 40px; /* 第二層縮排為 40px */
+    details details details details summary {
+        text-indent: 60px; /* 第四層縮排為 80px */
+    }
+
+    details details details details div {
+        text-indent: 80px; /* 第五層縮排為 80px */
     }
 
     .color-box {
@@ -154,9 +162,106 @@
   </div>
 
   <div id="sidebar">
-    <div class="title" onclick="loadPage('Home Default Page.html')">Home<br></div>
+    <div class="title" onclick="loadPage('Home Default Page.html');menuClicked(this)">Home<br></div>
     <details>
-        <summary class="title" onclick="loadPage('./Regression Test/Regression Test.html')">Regression Test<br>
+      <summary class="title" onclick="loadPage('./Feature Tests/Feature Tests.html');menuClicked(this)">Feature Tests<br>
+          <span style="margin-right: 5px;">
+              <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+              2 Passed
+          </span>
+          <span style="margin-right: 5px;">
+              <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+              0 Failed
+          </span>
+          <span>
+              <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+              0 Others
+          </span>
+      </summary>
+      <details>
+        <summary class="title" onclick="loadPage('./Feature Tests/Make/Make.html');menuClicked(this)">Make<br>
+            <span style="margin-right: 5px; margin-left: 20px;">
+                <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                2 Passed
+            </span>
+            <span style="margin-right: 5px;">
+                <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                0 Failed
+            </span>
+            <span>
+                <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                0 Others
+            </span>
+        </summary>
+          <details>
+              <summary class="title" onclick="loadPage('./Feature Tests/Make/DCT-43746/DCT-43746.html');menuClicked(this)">Suite DCT-43746<br>
+                  <span style="margin-right: 5px; margin-left: 40px;">
+                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                      2 Passed
+                  </span>
+                  <span style="margin-right: 5px;">
+                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                      0 Failed
+                  </span>
+                  <span>
+                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                      0 Others
+                  </span>
+              </summary>
+              <details>
+                  <summary class="title" onclick="loadPage('./Feature Tests/Make/DCT-43746/Delete Make/Delete Make.html');menuClicked(this)">Feature Delete make<br>
+                      <span style="margin-right: 5px; margin-left: 60px;">
+                          <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                          2 Passed
+                      </span>
+                      <span style="margin-right: 5px;">
+                          <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                          0 Failed
+                      </span>
+                      <span>
+                          <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                          0 Others
+                      </span>
+                  </summary>
+                  <div class="title" onclick="loadPage('./Feature Tests/Make/DCT-43746/Delete Make/Scenario A make cannot be deleted when it referred by a model.html');menuClicked(this)">
+                    <span>Scenario: A make cannot be deleted when&nbsp;</span><br>
+                    <span style="margin-right: 5px; margin-left: 80px;">it referred by a model</span><br>
+                    <span style="margin-right: 5px; margin-left: 80px;">
+                        <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                        1 Passed
+                    </span>
+                    <span style="margin-right: 5px;">
+                        <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                        0 Failed
+                    </span>
+                    <span>
+                        <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                        0 Others
+                    </span>
+                  </div>
+                  <div class="title" onclick="loadPage('./Feature Tests/Make/DCT-43746/Delete Make/Scenario A make can be deleted when user deleting the model which refers to it from another browser.html');menuClicked(this)">
+                    <span>Scenario: A make can be deleted when user&nbsp;</span><br>
+                    <span style="margin-right: 5px; margin-left: 80px;">deleting the model which refers to it from&nbsp;</span><br>
+                    <span style="margin-right: 5px; margin-left: 80px;">another browser</span><br>
+                    <span style="margin-right: 5px; margin-left: 80px;">
+                        <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+                        1 Passed
+                    </span>
+                    <span style="margin-right: 5px;">
+                        <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+                        0 Failed
+                    </span>
+                    <span>
+                        <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+                        0 Others
+                    </span>
+                  </div>
+              </details>
+          </details>
+        </details>
+      </details>
+    <details>
+        <summary class="title" onclick="loadPage('./Regression Test/Regression Test.html');menuClicked(this)">Regression Test<br>
             <span style="margin-right: 5px;">
                 <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
                 3 Passed
@@ -171,7 +276,7 @@
             </span>
         </summary>
         <details>
-            <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746.html')">Suite DCT-43746<br>
+            <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746.html');menuClicked(this)">Suite DCT-43746<br>
                 <span style="margin-right: 5px; margin-left: 20px;">
                     <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
                     3 Passed
@@ -186,7 +291,7 @@
                 </span>
             </summary>
             <details>
-                <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/DCT-43746 Add Make.html')">Feature DCT-43746 Add Make<br>
+                <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/DCT-43746 Add Make.html');menuClicked(this)">Feature Add make<br>
                     <span style="margin-right: 5px; margin-left: 40px;">
                         <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
                         3 Passed
@@ -200,7 +305,7 @@
                         0 Others
                     </span>
                 </summary>
-                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario Outline Make can not be added with duplicate name.html')">
+                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario Outline Make can not be added with duplicate name.html');menuClicked(this)">
                   <span>Scenario Outline: Make can not be added with&nbsp;</span><br>
                   <span style="margin-right: 5px; margin-left: 60px;">duplicate name</span><br>
                   <span style="margin-right: 5px; margin-left: 60px;">
@@ -216,7 +321,7 @@
                       0 Others
                   </span>
                 </div>
-                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario A make can be created with only single character in all fields.html')">
+                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario A make can be created with only single character in all fields.html');menuClicked(this)">
                   <span>Scenario: A make can be created with only&nbsp;</span><br>
                   <span style="margin-right: 5px; margin-left: 60px;">single character in all fields</span><br>
                   <span style="margin-right: 5px; margin-left: 60px;">
@@ -232,7 +337,7 @@
                       0 Others
                   </span>
                 </div>
-                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario A make with single space character in the name cannot be created.html')">
+                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Add Make/Scenario A make with single space character in the name cannot be created.html');menuClicked(this)">
                   <span>Scenario: A make with single space character&nbsp;</span><br>
                   <span style="margin-right: 5px; margin-left: 60px;">in the name cannot be created</span><br>
                   <span style="margin-right: 5px; margin-left: 60px;">
@@ -250,7 +355,7 @@
                 </div>
             </details>
             <details>
-                <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Edit Make/DCT-43746 Edit Make.html')">Feature DCT-43746 Edit Make<br>
+                <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Edit Make/DCT-43746 Edit Make.html');menuClicked(this)">Feature Edit make<br>
                     <span style="margin-right: 5px; margin-left: 40px;">
                       <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
                       0 Passed
@@ -264,7 +369,7 @@
                       0 Others
                     </span>
                   </summary>
-                  <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Edit Make/Scenario Edit a make name failed because without click save button.html')">
+                  <div class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746 Edit Make/Scenario Edit a make name failed because without click save button.html');menuClicked(this)">
                     <span>Scenario: Edit a make name failed because&nbsp;</span><br>
                     <span style="margin-right: 5px; margin-left: 60px;">without click save button</span><br>
                     <span style="margin-right: 5px; margin-left: 60px;">
@@ -290,15 +395,18 @@
       <h2>dcTrack Living Documentation</h2>
       <p>點選左邊選單選擇測試。</p>
       <h3>Detail:</h3>
-      <p style="font-size: 25px; color: rgb(114, 167, 35);">Suite: 1</p>
-      <p style="font-size: 25px; color: rgb(27, 180, 149);">Feature: 2</p>
-      <p style="font-size: 25px; color: rgb(142, 27, 180);">Scenarios: 4</p>
       <table class="bordered">
         <tr>
           <th>Test Type</th>
           <th>Suite</th>
           <th>Number Of Features</th>
           <th>Number Of Scenarios</th>
+        </tr>
+        <tr>
+          <td>Feature Tests</td>
+          <td>DCT-43746</td>
+          <td>1</td>
+          <td>2</td>
         </tr>
         <tr>
           <td>Regression Test</td>
@@ -309,6 +417,18 @@
       </table>
 
       <h3>Test status:</h3> 
+      <div>
+        <p style="font-size: 20px; color: rgb(23, 26, 25); display: inline;">Feature Tests</p>
+        <span style="margin-left: 10px;">
+          <div class="color-box green" style="display: inline-block; margin-right: 5px;"></div> 2 Passed
+        </span>
+        <span style="margin-left: 10px;">
+          <div class="color-box red" style="display: inline-block; margin-right: 5px;"></div> 0 Failed
+        </span>
+        <span style="margin-left: 10px;">
+          <div class="color-box gray" style="display: inline-block; margin-right: 5px;"></div> 0 Others
+        </span>
+      </div>
       <div>
         <p style="font-size: 20px; color: rgb(23, 26, 25); display: inline;">Regression Test</p>
         <span style="margin-left: 10px;">
@@ -324,42 +444,6 @@
     </div>
 
     <script>
-    var ctx = document.getElementById('testOverviewChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Passed', 'Failed', 'Others'],
-        datasets: [{
-          label: '# of Tests',
-          data: [3, 1, 0],
-          backgroundColor: [
-            'rgba(0, 255, 0, 0.5)',
-            'rgba(255, 0, 0, 0.5)',
-            'rgba(128, 128, 128, 0.5)'
-          ],
-          borderColor: [
-            'rgba(0, 255, 0, 1)',
-            'rgba(255, 0, 0, 1)',
-            'rgba(128, 128, 128, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: false,
-        legend: {
-          position: 'bottom'
-        },
-        title: {
-          display: false
-        },
-        animation: {
-          animateScale: true,
-          animateRotate: true
-        }
-      }
-    });
-
     var sidebarExpanded = true;
     function toggleSidebar() {
       var hamburger_menu_back = document.getElementById('hamburger-menu-background');
@@ -383,6 +467,18 @@
       sidebarExpanded = !sidebarExpanded;
     }
 
+    // 選單被按下時執行的函數
+    function menuClicked(menuItem) {
+      // 先將所有選項的顏色重置為黑色
+      var menuItems = document.querySelectorAll('.title');
+      menuItems.forEach(function(item) {
+        item.style.color = 'black';
+      });
+
+      // 改變被按下的選項的顏色為藍色
+      menuItem.style.color = 'blue';
+    }
+
     // 頁面載入函式
     function loadPage(page) {
     // 使用fetch載入指定頁面
@@ -398,14 +494,105 @@
         document.getElementById('content').innerHTML = bodyContent;
 
         // 重新初始化圖表
-        var ctx = document.getElementById('testOverviewChart').getContext('2d');
-        var myChart = new Chart(ctx, {
+        if(page.startsWith('./Feature Tests')) {
+          chart();
+        }
+        else if (page.startsWith('./Regression Test')) {
+          chart2();
+        }
+        else {
+          chart();
+        }
+        // chart();
+        // chart2();
+        // var ctx_f = document.getElementById('featureChart').getContext('2d');
+        // var myChart1 = new Chart(ctx_f, {
+        //     type: 'doughnut',
+        //     data: {
+        //     labels: ['Passed', 'Failed', 'Others'],
+        //     datasets: [{
+        //         label: '# of Tests',
+        //         data: [2, 0, 0],
+        //         backgroundColor: [
+        //         'rgba(0, 255, 0, 0.5)',
+        //         'rgba(255, 0, 0, 0.5)',
+        //         'rgba(128, 128, 128, 0.5)'
+        //         ],
+        //         borderColor: [
+        //         'rgba(0, 255, 0, 1)',
+        //         'rgba(255, 0, 0, 1)',
+        //         'rgba(128, 128, 128, 1)'
+        //         ],
+        //         borderWidth: 1
+        //     }]
+        //     },
+        //     options: {
+        //     responsive: false,
+        //     legend: {
+        //         position: 'bottom'
+        //     },
+        //     title: {
+        //         display: false
+        //     },
+        //     animation: {
+        //         animateScale: true,
+        //         animateRotate: true
+        //     }
+        //     }
+        // });
+        
+        // 重新初始化圖表
+        // var ctx = document.getElementById('testOverviewChart').getContext('2d');
+        // var myChart2 = new Chart(ctx, {
+        //     type: 'doughnut',
+        //     data: {
+        //     labels: ['Passed', 'Failed', 'Others'],
+        //     datasets: [{
+        //         label: '# of Tests',
+        //         data: [3, 1, 0],
+        //         backgroundColor: [
+        //         'rgba(0, 255, 0, 0.5)',
+        //         'rgba(255, 0, 0, 0.5)',
+        //         'rgba(128, 128, 128, 0.5)'
+        //         ],
+        //         borderColor: [
+        //         'rgba(0, 255, 0, 1)',
+        //         'rgba(255, 0, 0, 1)',
+        //         'rgba(128, 128, 128, 1)'
+        //         ],
+        //         borderWidth: 1
+        //     }]
+        //     },
+        //     options: {
+        //     responsive: false,
+        //     legend: {
+        //         position: 'bottom'
+        //     },
+        //     title: {
+        //         display: false
+        //     },
+        //     animation: {
+        //         animateScale: true,
+        //         animateRotate: true
+        //     }
+        //     }
+        // });
+    })
+    .catch(error => {
+        console.error('載入頁面時發生錯誤:', error);
+    });
+    }
+
+    function chart() {
+      // 重新初始化圖表
+      var ctx_f = document.getElementById('featureChart').getContext('2d');
+        var myChart1 = new Chart(ctx_f, {
             type: 'doughnut',
             data: {
             labels: ['Passed', 'Failed', 'Others'],
             datasets: [{
                 label: '# of Tests',
-                data: [3, 1, 0],
+                data: [2, 0, 0],
                 backgroundColor: [
                 'rgba(0, 255, 0, 0.5)',
                 'rgba(255, 0, 0, 0.5)',
@@ -433,10 +620,45 @@
             }
             }
         });
-    })
-    .catch(error => {
-        console.error('載入頁面時發生錯誤:', error);
-    });
+    }
+
+    function chart2() {
+      // 重新初始化圖表
+      var ctx = document.getElementById('testOverviewChart').getContext('2d');
+      var myChart2 = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+          labels: ['Passed', 'Failed', 'Others'],
+          datasets: [{
+              label: '# of Tests',
+              data: [3, 1, 0],
+              backgroundColor: [
+              'rgba(0, 255, 0, 0.5)',
+              'rgba(255, 0, 0, 0.5)',
+              'rgba(128, 128, 128, 0.5)'
+              ],
+              borderColor: [
+              'rgba(0, 255, 0, 1)',
+              'rgba(255, 0, 0, 1)',
+              'rgba(128, 128, 128, 1)'
+              ],
+              borderWidth: 1
+          }]
+          },
+          options: {
+          responsive: false,
+          legend: {
+              position: 'bottom'
+          },
+          title: {
+              display: false
+          },
+          animation: {
+              animateScale: true,
+              animateRotate: true
+          }
+          }
+      });
     }
 
     function goToLog(step) {

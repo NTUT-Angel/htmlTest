@@ -503,80 +503,6 @@
         else {
           chart();
         }
-        // chart();
-        // chart2();
-        // var ctx_f = document.getElementById('featureChart').getContext('2d');
-        // var myChart1 = new Chart(ctx_f, {
-        //     type: 'doughnut',
-        //     data: {
-        //     labels: ['Passed', 'Failed', 'Others'],
-        //     datasets: [{
-        //         label: '# of Tests',
-        //         data: [2, 0, 0],
-        //         backgroundColor: [
-        //         'rgba(0, 255, 0, 0.5)',
-        //         'rgba(255, 0, 0, 0.5)',
-        //         'rgba(128, 128, 128, 0.5)'
-        //         ],
-        //         borderColor: [
-        //         'rgba(0, 255, 0, 1)',
-        //         'rgba(255, 0, 0, 1)',
-        //         'rgba(128, 128, 128, 1)'
-        //         ],
-        //         borderWidth: 1
-        //     }]
-        //     },
-        //     options: {
-        //     responsive: false,
-        //     legend: {
-        //         position: 'bottom'
-        //     },
-        //     title: {
-        //         display: false
-        //     },
-        //     animation: {
-        //         animateScale: true,
-        //         animateRotate: true
-        //     }
-        //     }
-        // });
-        
-        // 重新初始化圖表
-        // var ctx = document.getElementById('testOverviewChart').getContext('2d');
-        // var myChart2 = new Chart(ctx, {
-        //     type: 'doughnut',
-        //     data: {
-        //     labels: ['Passed', 'Failed', 'Others'],
-        //     datasets: [{
-        //         label: '# of Tests',
-        //         data: [3, 1, 0],
-        //         backgroundColor: [
-        //         'rgba(0, 255, 0, 0.5)',
-        //         'rgba(255, 0, 0, 0.5)',
-        //         'rgba(128, 128, 128, 0.5)'
-        //         ],
-        //         borderColor: [
-        //         'rgba(0, 255, 0, 1)',
-        //         'rgba(255, 0, 0, 1)',
-        //         'rgba(128, 128, 128, 1)'
-        //         ],
-        //         borderWidth: 1
-        //     }]
-        //     },
-        //     options: {
-        //     responsive: false,
-        //     legend: {
-        //         position: 'bottom'
-        //     },
-        //     title: {
-        //         display: false
-        //     },
-        //     animation: {
-        //         animateScale: true,
-        //         animateRotate: true
-        //     }
-        //     }
-        // });
     })
     .catch(error => {
         console.error('載入頁面時發生錯誤:', error);
@@ -662,11 +588,13 @@
     }
 
     function goToLog(step) {
-        location.href = "./Regression Test/DCT-43746/DCT-43746 Add Make/dctrack report/log.html#s1-s1-s1-s1-"+step;
+        window.open("./Regression Test/DCT-43746/DCT-43746 Add Make/dctrack report/log.html#s1-s1-s1-s1-"+step, "_blank");
+        // location.href = "./Regression Test/DCT-43746/DCT-43746 Add Make/dctrack report/log.html#s1-s1-s1-s1-"+step;
     }
 
     function goToLog2(step) {
-        location.href = "./Regression Test/DCT-43746/DCT-43746 Edit Make/dctrack error report/log.html#s1-s1-s1-s1-"+step;
+        window.open("./Regression Test/DCT-43746/DCT-43746 Edit Make/dctrack error report/log.html#s1-s1-s1-s1-"+step, "_blank");
+        // location.href = "./Regression Test/DCT-43746/DCT-43746 Edit Make/dctrack error report/log.html#s1-s1-s1-s1-"+step;
     }
   </script>
 </body>

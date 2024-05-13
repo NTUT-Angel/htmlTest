@@ -7,15 +7,16 @@
     <p>Tags: <span class="tags">TMD-4613</span></p>
     <h2><span class="status">PASS</span> Scenario: A make can be deleted when user deleting the model which refers to it from another browser</h2>
     <div class="broad">
-        <p onclick="goToLog('t2-k1')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Given</span> I have created a make ${make4613}</p>
-        <p onclick="goToLog('t2-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">And</span> I have created a model ${model4613} which refers to the make</p>
-        <p onclick="goToLog('t2-k3')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">When</span> I delete the model which refers to the make in second browser</p>
-        <p onclick="goToLog('t2-k4')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Then</span> The make can be deleted in first browser</p>
-        <p onclick="goToLog('t2-k5')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> Teardown For TMD-4613</p>
+        <p onclick="goToLog3('t2-k1')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Given</span> I have created a make ${make4613}</p>
+        <p onclick="goToLog3('t2-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">And</span> I have created a model ${model4613} which refers to the make</p>
+        <p onclick="goToLog3('t2-k3')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">When</span> I delete the model which refers to the make in second browser</p>
+        <p onclick="goToLog3('t2-k4')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Then</span> The make can be deleted in first browser</p>
+        <p onclick="goToLog3('t2-k5')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> Teardown For TMD-4613</p>
     </div>
 </body>
 <script>
-function goToLog(step) {
+function goToLog3(step) {
   location.href = "./dctrack report/log.html#s1-s1-s1-s1-"+step;
 }
 </script>
+</html>

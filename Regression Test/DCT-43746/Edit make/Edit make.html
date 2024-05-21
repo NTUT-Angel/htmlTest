@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Living Documentation</title>
+</head>
+<body>
+  <p>Force Tags: <span class="default_tags">DCT-43746</span> <span class="default_tags">Models-Library</span></p>
+        <p>Default Tags: <span class="default_tags">DCT-43746</span></p>
+        <h2><span class="status_e">FAIL</span> Feature: Edit make</h2>
+        <div class="broad"><p><span class="documentation">
+            Documentation:<br>
+            ...    In order to manage make<br>
+            ...    As an dctrack user<br>
+            ...    I want to editing a make</span></p></div>
+
+        <h2><span class="status">PASS</span> Background:</h2>
+        <div class="broad">
+          <div><p onclick="goToLog2('t1-k1')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Given</span> I have created a make ${make43746}</p></div>
+          <div><p onclick="goToLog2('t1-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">AND</span> I am ready to manage makes</p></div>
+        </div>
+
+        <p>Tags: <span class="tags">TMD-45678</span></p>
+        <h2><span class="status_e">FAIL</span> Scenario: Edit a make name failed because without click save button</h2>
+        <div class="broad">
+            <p onclick="goToLog2('t1-k3')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">When</span> I edit the make name</p>
+            <p onclick="goToLog2('t1-k4')" class="bdd_a"><span class="status_e">FAIL</span> <span class="bdd">Then</span> The test case should be failed</p>
+            <p onclick="goToLog2('t1-k5')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> HTTP Request::Delete Makes ${make43746}</p>
+        </div>
+</body>
+</html>

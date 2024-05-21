@@ -34,7 +34,7 @@
   </style>
 </head>
 <body>
-  <h2>DCT-43746 Refactor the Makes UI to be less confusing</h2>
+  <h2>DCT-43746 Refactor the makes UI to be less confusing</h2>
   <h3>Suite Detail:</h3>
   <table class="bordered">
       <tr>
@@ -90,7 +90,7 @@
   <!-- <div class="broad"> -->
     <div class="chart-container">
       <h3 class="chart-title">All test runs status</h3>
-      <canvas id="testOverviewChart"></canvas>
+      <canvas id="chartDCT43746"></canvas>
       <br>
       <div>
         <div class="color-box green"></div> 3 Passed
@@ -102,7 +102,7 @@
 </body>
 
 <script>
-var ctx = document.getElementById('testOverviewChart').getContext('2d');
+var ctx = document.getElementById('chartDCT43746').getContext('2d');
     var myChart = new Chart(ctx, {
       type: 'doughnut',
       data: {

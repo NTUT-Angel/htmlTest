@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Living Documentation</title>
+</head>
+<body>
+    <p>Tags: <span class="tags">TMD-4586</span> <span class="tags">TMD-4587</span></p>
+    <h2><span class="status">PASS</span> Scenario Outline: Make can not be added with duplicate name</h2>
+    <div class="broad">
+        <p onclick="goToLog('t1-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">When</span> I add a make with name &lt;duplicateMakeName&gt;</p>
+        <p onclick="goToLog('t1-k3')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Then</span> Make with duplicate name &lt;duplicateMakeName&gt; cannot be created</p>
+        <p onclick="goToLog('t1-k4')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> Teardown For TMD-4586_87</p>
+        <p>Examples:</p>
+        <table class="bordered">
+            <tr>
+                <th>duplicateMakeName</th>
+            </tr>
+            <tr>
+                <td>${DBExistingMake4586}</td>
+            </tr>
+            <tr>
+                <td>${upperCaseOfDBExistingMake4586}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+function goToLog(step) {
+  location.href = "./dctrack report/log.html#s1-s1-s1-s1-"+step;
+}
+</script>
+</html>

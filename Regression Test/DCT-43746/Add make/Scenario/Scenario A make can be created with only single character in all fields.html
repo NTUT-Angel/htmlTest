@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Living Documentation</title>
+</head>
+<body>
+        <p>Tags: <span class="tags">TMD-4583</span></p>
+        <h2><span class="status">PASS</span> Scenario: A make can be created with only single character in all fields</h2>
+        <div class="broad">
+            <p onclick="goToLog('t3-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">When</span> I create a make with following data</p>
+            <table class="bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>Alias</th>
+                    <th>Notes</th>
+                    <th>Cutomer Service</th>
+                    <th>Technical Support</th>
+                    <th>Account Number</th>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                </tr>
+            </table>
+            <p onclick="goToLog('t3-k3')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Then</span> Following make is created</p>
+            <table class="bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>Alias</th>
+                    <th>Notes</th>
+                    <th>Cutomer Service</th>
+                    <th>Technical Support</th>
+                    <th>Account Number</th>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                    <td>a</td>
+                </tr>
+            </table>
+            <p onclick="goToLog('t3-k4')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> Teardown For TMD-4583</p>
+        </div>
+</body>
+<script>
+function goToLog(step) {
+  location.href = "./dctrack report/log.html#s1-s1-s1-s1-"+step;
+}
+</script>
+</html>

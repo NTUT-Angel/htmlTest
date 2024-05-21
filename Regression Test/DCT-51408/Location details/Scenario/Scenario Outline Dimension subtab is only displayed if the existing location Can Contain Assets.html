@@ -7,9 +7,9 @@
     <p>Tags: <span class="tags">TMD-23268</span></p>
     <h2><span class="status">PASS</span> Scenario Outline: Dimension subtab is only displayed if the existing location "Can Contain Assets"</h2>
     <div class="broad">
-        <p onclick="goToLog('t4-k1')" class="bdd_a"><span class="status">PASS</span> <span class="st">Setup</span> I create locations with different level in hierarchy</p>
-        <p onclick="goToLog('t4-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Then</span> Dimensions subtab in &lt;locationCode&gt; location is visible based on "Can Contain Assets"</p>
-        <p onclick="goToLog('t4-k3')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> Teardown For TMD-23268-2</p>
+        <p onclick="goToLog3('t4-k1')" class="bdd_a"><span class="status">PASS</span> <span class="st">Setup</span> I create locations with different level in hierarchy</p>
+        <p onclick="goToLog3('t4-k2')" class="bdd_a"><span class="status">PASS</span> <span class="bdd">Then</span> Dimensions subtab in &lt;locationCode&gt; location is visible based on "Can Contain Assets"</p>
+        <p onclick="goToLog3('t4-k3')" class="bdd_a"><span class="status">PASS</span> <span class="st">Teardown</span> Teardown For TMD-23268-2</p>
         <p>Examples:</p>
         <table class="bordered">
             <tr>
@@ -28,7 +28,7 @@
     </div>
 </body>
 <script>
-function goToLog(step) {
+function goToLog3(step) {
   location.href = "./report/log.html#s1-s1-s1-s1-"+step;
 }
 </script>

@@ -44,13 +44,13 @@
           border-radius: 50%;
           display: inline-block;
           margin-right: 4px;
-        }
+      }
 
       .title {
           cursor: pointer;
           padding: 10px;
           background-color: #ddd;
-          }
+      }
 
         /* 漢堡選單樣式 */
         .hamburger-menu {
@@ -94,32 +94,13 @@
       }
 
       /* 調整 summary 展開的縮排 */
-    summary {
-        text-indent: 0; /* 初始縮排為 0 */
+
+    details summary {
+        text-indent: 0px; /* 初始縮排為 0 */
     }
 
-    details details summary {
+    details div {
         text-indent: 20px; /* 第二層縮排為 20px */
-    }
-
-    details details details summary {
-        text-indent: 40px; /* 第三層縮排為 40px */
-    }
-
-    details details div {
-        text-indent: 40px; /* 第二層縮排為 40px */
-    }
-
-    details details details div {
-        text-indent: 60px; /* 第四層縮排為 60px */
-    }
-
-    details details details details summary {
-        text-indent: 60px; /* 第四層縮排為 80px */
-    }
-
-    details details details details div {
-        text-indent: 80px; /* 第五層縮排為 80px */
     }
 
     .color-box {
@@ -162,266 +143,211 @@
   </div>
 
   <div id="sidebar">
-    <div class="title" onclick="loadPage('Home Default Page.html');menuClicked(this)">Home<br></div>
+    <!-- <div class="title" onclick="loadPage('Home Default Page.html');menuClicked(this)">Home<br></div> -->
+    <!-- Feature: Add make -->
     <details>
-        <summary class="title" onclick="loadPage('./Regression Test/Regression Test.html');menuClicked(this)">Regression Test<br>
-            <span style="margin-right: 5px;">
-                <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                7 Passed
-            </span>
-            <span style="margin-right: 5px;">
-                <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                1 Failed
-            </span>
-            <span>
-                <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                0 Others
-            </span>
-        </summary>
-        <details>
-            <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/DCT-43746.html');menuClicked(this)">Suite DCT-43746<br>
-                <span style="margin-right: 5px; margin-left: 20px;">
-                    <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                    3 Passed
-                </span>
-                <span style="margin-right: 5px;">
-                    <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                    1 Failed
-                </span>
-                <span>
-                    <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                    0 Others
-                </span>
-            </summary>
-            <details>
-                <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/Add make/Add make.html');menuClicked(this)">Feature Add make<br>
-                    <span style="margin-right: 5px; margin-left: 40px;">
-                        <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                        3 Passed
-                    </span>
-                    <span style="margin-right: 5px;">
-                        <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                        0 Failed
-                    </span>
-                    <span>
-                        <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                        0 Others
-                    </span>
-                </summary>
-                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/Add make/Scenario/Scenario Outline Make can not be added with duplicate name.html');menuClicked(this)">
-                  <span>Scenario Outline: Make can not be added with&nbsp;</span><br>
-                  <span style="margin-right: 5px; margin-left: 60px;">duplicate name</span><br>
-                  <span style="margin-right: 5px; margin-left: 60px;">
-                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                      1 Passed
-                  </span>
-                  <span style="margin-right: 5px;">
-                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                      0 Failed
-                  </span>
-                  <span>
-                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                      0 Others
-                  </span>
-                </div>
-                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/Add make/Scenario/Scenario A make can be created with only single character in all fields.html');menuClicked(this)">
-                  <span>Scenario: A make can be created with only&nbsp;</span><br>
-                  <span style="margin-right: 5px; margin-left: 60px;">single character in all fields</span><br>
-                  <span style="margin-right: 5px; margin-left: 60px;">
-                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                      1 Passed
-                  </span>
-                  <span style="margin-right: 5px;">
-                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                      0 Failed
-                  </span>
-                  <span>
-                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                      0 Others
-                  </span>
-                </div>
-                <div class="title" onclick="loadPage('./Regression Test/DCT-43746/Add make/Scenario/Scenario A make with single space character in the name cannot be created.html');menuClicked(this)">
-                  <span>Scenario: A make with single space character&nbsp;</span><br>
-                  <span style="margin-right: 5px; margin-left: 60px;">in the name cannot be created</span><br>
-                  <span style="margin-right: 5px; margin-left: 60px;">
-                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                      1 Passed
-                  </span>
-                  <span style="margin-right: 5px;">
-                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                      0 Failed
-                  </span>
-                  <span>
-                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                      0 Others
-                  </span>
-                </div>
-            </details>
-            <details>
-                <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/Edit make/Edit make.html');menuClicked(this)">Feature Edit make<br>
-                    <span style="margin-right: 5px; margin-left: 40px;">
-                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                      0 Passed
-                    </span>
-                    <span style="margin-right: 5px;">
-                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                      1 Failed
-                    </span>
-                    <span>
-                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                      0 Others
-                    </span>
-                  </summary>
-                  <div class="title" onclick="loadPage('./Regression Test/DCT-43746/Edit make/Scenario/Scenario Edit a make name failed because without click save button.html');menuClicked(this)">
-                    <span>Scenario: Edit a make name failed because&nbsp;</span><br>
-                    <span style="margin-right: 5px; margin-left: 60px;">without click save button</span><br>
-                    <span style="margin-right: 5px; margin-left: 60px;">
-                        <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                        0 Passed
-                    </span>
-                    <span style="margin-right: 5px;">
-                        <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                        1 Failed
-                    </span>
-                    <span>
-                        <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                        0 Others
-                    </span>
-                  </div>
-            </details>
-        </details>
-        <details>
-          <summary class="title" onclick="loadPage('./Regression Test/DCT-51408/DCT-51408.html');menuClicked(this)">Suite DCT-51408<br>
-              <span style="margin-right: 5px; margin-left: 20px;">
-                  <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                  3 Passed
-              </span>
-              <span style="margin-right: 5px;">
-                  <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                  0 Failed
-              </span>
-              <span>
-                  <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                  0 Others
-              </span>
-          </summary>
-          <details>
-              <summary class="title" onclick="loadPage('./Regression Test/DCT-51408/Location details/Location details.html');menuClicked(this)">Feature Location details<br>
-                  <span style="margin-right: 5px; margin-left: 40px;">
-                      <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                      3 Passed
-                  </span>
-                  <span style="margin-right: 5px;">
-                      <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                      0 Failed
-                  </span>
-                  <span>
-                      <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                      0 Others
-                  </span>
-              </summary>
-              <div class="title" onclick="loadPage('./Regression Test/DCT-51408/Location details/Scenario/Scenario Outline Dimension subtab is only displayed if the location Can Contain Assets.html');menuClicked(this)">
-                <span>Scenario Outline: Dimension subtab is only"&nbsp;</span><br>
-                <span style="margin-right: 5px; margin-left: 60px;">displayed if the location "Can Contain Assets"</span><br>
-                <span style="margin-right: 5px; margin-left: 60px;">
-                    <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                    1 Passed
-                </span>
-                <span style="margin-right: 5px;">
-                    <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                    0 Failed
-                </span>
-                <span>
-                    <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                    0 Others
-                </span>
-              </div>
-              <div class="title" onclick="loadPage('./Regression Test/DCT-51408/Location details/Scenario/Scenario Outline Dimension subtab is only displayed if the existing location Can Contain Assets.html');menuClicked(this)">
-                <span>Scenario Outline: Dimension subtab is only&nbsp;</span><br>
-                <span style="margin-right: 5px; margin-left: 60px;">displayed if the existing location "Can</span><br>
-                <span style="margin-right: 5px; margin-left: 60px;"> Contain Assets"</span><br>
-                <span style="margin-right: 5px; margin-left: 60px;">
-                    <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                    1 Passed
-                </span>
-                <span style="margin-right: 5px;">
-                    <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                    0 Failed
-                </span>
-                <span>
-                    <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                    0 Others
-                </span>
-              </div>
-              <div class="title" onclick="loadPage('./Regression Test/DCT-51408/Location details/Scenario/Scenario The changes are saved when editing field under dimension.html');menuClicked(this)">
-                <span>Scenario: The changes are saved when editing&nbsp;</span><br>
-                <span style="margin-right: 5px; margin-left: 60px;">field under dimension</span><br>
-                <span style="margin-right: 5px; margin-left: 60px;">
-                    <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                    1 Passed
-                </span>
-                <span style="margin-right: 5px;">
-                    <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                    0 Failed
-                </span>
-                <span>
-                    <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                    0 Others
-                </span>
-              </div>
-          </details>
-      </details>
-      <details>
-        <summary class="title" onclick="loadPage('./Regression Test/DCT-54060/DCT-54060.html');menuClicked(this)">Suite DCT-54060<br>
-            <span style="margin-right: 5px; margin-left: 20px;">
-                <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                1 Passed
-            </span>
-            <span style="margin-right: 5px;">
-                <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                0 Failed
-            </span>
-            <span>
-                <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                0 Others
-            </span>
-        </summary>
-        <details>
-            <summary class="title" onclick="loadPage('./Regression Test/DCT-54060/Set permissions on multiple items quickly/Set permissions on multiple items quickly.html');menuClicked(this)">
-                <span>Feature Set permissions on multiple items&nbsp;</span><br>
-                <span style="margin-right: 5px; margin-left: 55px;">quickly</span><br> <!-- 55 -->
-                <span style="margin-right: 5px; margin-left: 40px;">
-                    <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                    1 Passed
-                </span>
-                <span style="margin-right: 5px;">
-                    <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                    0 Failed
-                </span>
-                <span>
-                    <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                    0 Others
-                </span>
-            </summary>
-            <div class="title" onclick="loadPage('./Regression Test/DCT-54060/Set permissions on multiple items quickly/Scenario/Scenario Check when multiple objects are selected, the permissions button shall remain enable.html');menuClicked(this)">
-              <span>Scenario: Check when multiple objects are&nbsp;</span><br>
-              <span style="margin-right: 5px; margin-left: 60px;">selected, the permissions button shall remain</span><br>
-              <span style="margin-right: 5px; margin-left: 60px;">enable</span><br>
-              <span style="margin-right: 5px; margin-left: 60px;">
-                  <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
-                  1 Passed
-              </span>
-              <span style="margin-right: 5px;">
-                  <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
-                  0 Failed
-              </span>
-              <span>
-                  <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
-                  0 Others
-              </span>
-            </div>
-        </details>
-      </details>
+      <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/Add make/Add make.html');menuClicked(this)">
+        <span>Feature: Add make<br></span>
+        <span style="margin-right: 5px; margin-left: 20px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            3 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </summary>
+      <div class="title" onclick="loadPage('./Regression Test/DCT-43746/Add make/Scenario/Scenario Outline Make can not be added with duplicate name.html');menuClicked(this)">
+        <span>Scenario Outline: Make can not be added with duplicate name</span><br>
+        <!-- <span style="margin-right: 5px; margin-left: 40px;">duplicate name</span><br> -->
+        <span style="margin-right: 5px; margin-left: 40px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            1 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </div>
+      <div class="title" onclick="loadPage('./Regression Test/DCT-43746/Add make/Scenario/Scenario A make can be created with only single character in all fields.html');menuClicked(this)">
+        <span>Scenario: A make can be created with only&nbsp;</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">single character in all fields</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            1 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </div>
+      <div class="title" onclick="loadPage('./Regression Test/DCT-43746/Add make/Scenario/Scenario A make with single space character in the name cannot be created.html');menuClicked(this)">
+        <span>Scenario: A make with single space character&nbsp;</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">in the name cannot be created</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            1 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </div>
+    </details>
+
+    <!-- Feature: Edit make -->
+    <details>
+      <summary class="title" onclick="loadPage('./Regression Test/DCT-43746/Edit make/Edit make.html');menuClicked(this)">
+        <span>Feature: Edit make</span><br>
+        <span style="margin-right: 5px; margin-left: 20px;">
+          <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+          0 Passed
+        </span>
+        <span style="margin-right: 5px;">
+          <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+          1 Failed
+        </span>
+        <span>
+          <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+          0 Others
+        </span>
+      </summary>
+      <div class="title" onclick="loadPage('./Regression Test/DCT-43746/Edit make/Scenario/Scenario Edit a make name failed because without click save button.html');menuClicked(this)">
+        <span>Scenario: Edit a make name failed because&nbsp;</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">without click save button</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            0 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            1 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </div>
+    </details>
+
+    <!-- Feature: Location details -->
+    <details>
+      <summary class="title" onclick="loadPage('./Regression Test/DCT-51408/Location details/Location details.html');menuClicked(this)">
+        <span>Feature: Location details</span><br>
+        <span style="margin-right: 5px; margin-left: 20px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            3 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </summary>
+      <div class="title" onclick="loadPage('./Regression Test/DCT-51408/Location details/Scenario/Scenario Outline Dimension subtab is only displayed if the location Can Contain Assets.html');menuClicked(this)">
+        <span>Scenario Outline: Dimension subtab is only"&nbsp;</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">displayed if the location "Can Contain Assets"</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            1 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </div>
+      <div class="title" onclick="loadPage('./Regression Test/DCT-51408/Location details/Scenario/Scenario Outline Dimension subtab is only displayed if the existing location Can Contain Assets.html');menuClicked(this)">
+        <span>Scenario Outline: Dimension subtab is only&nbsp;</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">displayed if the existing location "Can</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;"> Contain Assets"</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            1 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </div>
+      <div class="title" onclick="loadPage('./Regression Test/DCT-51408/Location details/Scenario/Scenario The changes are saved when editing field under dimension.html');menuClicked(this)">
+        <span>Scenario: The changes are saved when editing&nbsp;</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">field under dimension</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            1 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </div>
+    </details>
+
+    <!-- Feature: Set permissions on multiple items quickly -->
+    <details>
+      <summary class="title" onclick="loadPage('./Regression Test/DCT-54060/Set permissions on multiple items quickly/Set permissions on multiple items quickly.html');menuClicked(this)">
+        <span>Feature: Set permissions on multiple items quickly</span><br>
+        <span style="margin-right: 5px; margin-left: 20px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            1 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </summary>
+      <div class="title" onclick="loadPage('./Regression Test/DCT-54060/Set permissions on multiple items quickly/Scenario/Scenario Check when multiple objects are selected, the permissions button shall remain enable.html');menuClicked(this)">
+        <span>Scenario: Check when multiple objects are&nbsp;</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">selected, the permissions button shall remain</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">enable</span><br>
+        <span style="margin-right: 5px; margin-left: 40px;">
+            <span class="sidebar_status" style="background-color: rgb(40, 168, 53);"></span>
+            1 Passed
+        </span>
+        <span style="margin-right: 5px;">
+            <span class="sidebar_status" style="background-color: rgb(212, 56, 27)"></span>
+            0 Failed
+        </span>
+        <span>
+            <span class="sidebar_status" style="background-color: rgb(191, 191, 191);"></span>
+            0 Others
+        </span>
+      </div>
     </details>
   </div>
 
@@ -474,8 +400,9 @@
       var ds = document.querySelectorAll('details');
 
       if (sidebarExpanded) {
-          ds[0].style.display = 'none'; // 隱藏選項
-          // ds[4].style.display = 'none'; // 隱藏選項
+        for (let i = 0; i < ds.length; i++) {
+          ds[i].style.display = 'none'; // 隱藏選項
+        }
           sidebar.style.width = '100px';
           content.style.marginLeft = '100px';
           hamburger_menu_back.style.width = '100px';
@@ -484,8 +411,9 @@
           content.style.marginLeft = '400px';
           hamburger_menu_back.style.width = '400px';
           setTimeout(function() {
-              ds[0].style.display = 'block'; // 顯示選項
-              // ds[4].style.display = 'block'; // 顯示選項
+            for (let i = 0; i < ds.length; i++) {
+              ds[i].style.display = 'block'; // 隱藏選項
+            }
           }, 220);
       }
       sidebarExpanded = !sidebarExpanded;

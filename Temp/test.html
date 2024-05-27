@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Living Documentation</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<script>
+  // 選單被按下時執行的函數
+  function menuClicked(menuItem) {
+    // 先將所有選項的顏色重置為黑色
+    var menuItems = document.querySelectorAll('.title');
+    menuItems.forEach(function(item) {
+      item.style.color = 'black';
+    });
+
+    // 改變被按下的選項的顏色為藍色
+    menuItem.style.color = 'blue';
+  }
+</script>
+
+<div id="sidebar">
+  <div class="title" onclick="menuClicked(this)">Home<br></div>
+  <details>
+    <summary class="title" onclick="menuClicked(this)">Regression Test<br>
+      <!-- 內容 -->
+    </summary>
+    <details>
+      <summary class="title" onclick="menuClicked(this)">Suite DCT-43746<br>
+        <!-- 內容 -->
+      </summary>
+      <!-- 其他選項 -->
+    </details>
+  </details>
+</div>
+</body>
+</html>

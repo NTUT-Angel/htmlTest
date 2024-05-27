@@ -1,0 +1,22 @@
+.color-box {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.chart-container {
+    position: relative;
+    width: 300px;
+    height: 400px; /* 調整圖表容器的高度，以避免標題重疊在圖表上 */
+}
+
+.chart-title {
+    position: absolute;
+    top: -50px; /* 將標題移動到圖表正上方並離圖表更遠 */
+    left: 50%; /* 將標題水平置中 */
+    transform: translateX(-50%); /* 調整標題的位置 */
+}

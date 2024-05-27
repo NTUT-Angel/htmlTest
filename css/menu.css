@@ -1,0 +1,94 @@
+/* 漢堡選單樣式 */
+.hamburger-menu {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 垂直置中 */
+    align-items: center; /* 水平置中 */
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+
+#hamburger-menu-background {
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 400px;
+    background-color: #f1f1f1;
+    position: fixed; /* 將選單設置為固定位置 */
+    transition: width 0.3s ease; /* 添加過渡效果 */
+}
+
+/* 按鈕的樣式 */
+#toggleButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+#toggleButton span {
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    margin: 2px 0;
+    display: block;
+}
+
+/* 左邊選單樣式 */
+#sidebar {
+    left: 0;
+    top: 50px;
+    height: 90%;
+    width: 400px;
+    background-color: #f1f1f1;
+    overflow-y: auto;
+    /* padding-top: 50px; */
+    position: fixed; /* 將選單設置為固定位置 */
+    transition: width 0.3s ease; /* 添加過渡效果 */
+}
+
+.sidebar_status {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.feature-padding {
+    cursor: pointer;
+    padding: 10px 5px 10px 20px;  /* 上 右 下 左 */
+    background-color: #ddd;
+}
+
+.scenario-padding {
+    cursor: pointer;
+    padding: 10px 5px 10px 40px;  /* 上 右 下 左 */
+    background-color: #ddd;
+    /* padding-left: 40px;
+    padding-right: 5px; */
+}
+
+/* 右邊內容樣式 */
+#content {
+    /* flex: 1; */
+    margin-left: 400px; /* 為了避免內容被遮蓋，添加左邊距 */
+    padding: 20px;
+    overflow-y: auto;
+    transition: margin-left 0.3s; /* 添加過渡效果 */
+}

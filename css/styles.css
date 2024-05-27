@@ -1,0 +1,65 @@
+table.bordered {
+    border-collapse: collapse;
+    table-layout: fixed;
+    max-width: 400px;  /* 寬度超過200px即換行 */
+}
+
+table.bordered th, table.bordered td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center; /* 將表格內的文字置中 */
+}
+
+.default_tags{
+    background-color:#501e7e;
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center;
+}
+
+.tags{
+    background-color:#1e537e;
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center;
+}
+
+.broad {
+    border: 1px solid black; /* 將標題下的內容用方框包起來 */
+    padding: 8px;
+    margin: 8px;
+}
+
+.documentation {
+    color: blue; /* 將文字顏色設定為藍色 */
+}
+
+.bdd {
+    color: orange; /* 將文字顏色設定為橘色 */
+}
+
+.bdd_a:hover {
+    color: rgb(0, 190, 155); /* 移到文字上時改變為青色 */
+    cursor: pointer; /* 將滑鼠游標設定為手指指示可點擊 */
+}
+
+.st {
+    border: 1px solid rgb(216, 20, 160);
+    color: red; /* 將文字顏色設定為紅色 */
+}
+
+.status{
+    color:#fff;
+    display:inline-block;
+    padding-left:8px;
+    padding-right:8px;
+    text-align:center;
+}
+
+.green { background-color: rgb(67, 214, 82); }
+.red { background-color: rgb(230, 60, 30); }
+.gray { background-color: rgb(174, 174, 174); }

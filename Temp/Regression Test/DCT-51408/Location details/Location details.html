@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Living Documentation</title>
+</head>
+<body>
+  <p>Force Tags: <span class="default_tags">DCT-51408</span> <span class="default_tags">Locations-Page</span></p>
+        <p>Default Tags: <span class="default_tags">DCT-51408</span></p>
+        <h2><span class="status green">PASS</span> Feature: Location details</h2>
+        <div class="broad"><p><span class="documentation">
+            Documentation:<br>
+            ...    In order to efficiently manage and view locations specific information<br>
+            ...    As an dctrack user<br>
+            ...    I want to access detailed information about a location</span></p></div>
+
+        <p>Tags: <span class="tags">TMD-23268</span></p>
+        <h2><span class="status green">PASS</span> Scenario Outline: Dimension subtab is only displayed if the location "Can Contain Assets"</h2>
+        <div class="broad">
+            <p onclick="goToLog3('t1-k1')" class="bdd_a"><span class="status green">PASS</span> <span class="st">Setup</span> I am ready to go to the "Add a Location" page</p>
+            <p onclick="goToLog3('t1-k2')" class="bdd_a"><span class="status green">PASS</span> <span class="bdd">Then</span> Dimensions subtab is visible based on "Can Contain Assets" when creating &lt;levelInHierarchy&gt; location</p>
+            <p onclick="goToLog3('t1-k3')" class="bdd_a"><span class="status green">PASS</span> <span class="st">Teardown</span> Teardown For TMD-23268-1</p>
+            <p>Examples:</p>
+            <table class="bordered">
+                <tr>
+                    <th>levelInHierarchy</th>
+                </tr>
+                <tr>
+                    <td>Data Center</td>
+                </tr>
+                <tr>
+                    <td>Floor</td>
+                </tr>
+                <tr>
+                    <td>Room</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>Tags: <span class="tags">TMD-23268</span></p>
+        <h2><span class="status green">PASS</span> Scenario Outline: Dimension subtab is only displayed if the existing location "Can Contain Assets"</h2>
+        <div class="broad">
+            <p onclick="goToLog3('t4-k1')" class="bdd_a"><span class="status green">PASS</span> <span class="st">Setup</span> I create locations with different level in hierarchy</p>
+            <p onclick="goToLog3('t4-k2')" class="bdd_a"><span class="status green">PASS</span> <span class="bdd">Then</span> Dimensions subtab in &lt;locationCode&gt; location is visible based on "Can Contain Assets"</p>
+            <p onclick="goToLog3('t4-k3')" class="bdd_a"><span class="status green">PASS</span> <span class="st">Teardown</span> Teardown For TMD-23268-2</p>
+            <p>Examples:</p>
+            <table class="bordered">
+                <tr>
+                    <th>locationCode</th>
+                </tr>
+                <tr>
+                    <td>${dataCenterLocation23268}[Location Code]</td>
+                </tr>
+                <tr>
+                    <td>${floorLocation23268}[Location Parent] > ${floorLocation23268}[Location Code]</td>
+                </tr>
+                <tr>
+                    <td>${roomLocation23268}[Location Parent] > ${roomLocation23268}[Location Code]</td>
+                </tr>
+            </table>
+        </div>
+
+        <p>Tags: <span class="tags">TMD-23268</span></p>
+        <h2><span class="status green">PASS</span> Scenario: The changes are saved when editing field under dimension</h2>
+        <div class="broad">
+            <p onclick="goToLog3('t7-k1')" class="bdd_a"><span class="status green">PASS</span> <span class="bdd">Given</span> I create a location with following data</p>
+            <table class="bordered">
+                <tr>
+                    <th>Location Code</th>
+                    <th>Location Name</th>
+                    <th>Level In Hierarchy</th>
+                    <th>Country</th>
+                </tr>
+                <tr>
+                    <td>${location23268}[Location Code]</td>
+                    <td>${location23268}[Location Name]</td>
+                    <td>${location23268}[Level In Hierarchy]</td>
+                    <td>${location23268}[Country]</td>
+                </tr>
+            </table><br>
+            <table class="bordered">
+                <tr>
+                    <th>Location Area</th>
+                    <th>Can Contain Assets</th>
+                    <th>Enable AC VPC</th>
+                </tr>
+                <tr>
+                    <td>${location23268}[Location Area]</td>
+                    <td>${location23268}[Can Contain Assets]</td>
+                    <td>${location23268}[Enable AC VPC]</td>
+                </tr>
+            </table>
+            <p onclick="goToLog3('t7-k2')" class="bdd_a"><span class="status green">PASS</span> <span class="bdd">And</span> I open ${location23268}[Location Code] location with edit mode</p>
+            <p onclick="goToLog3('t7-k3')" class="bdd_a"><span class="status green">PASS</span> <span class="bdd">When</span> I edit field values under dimensions</p>
+            <p onclick="goToLog3('t7-k4')" class="bdd_a"><span class="status green">PASS</span> <span class="bdd">Then</span> Field values under dimensions are saved</p>
+            <p onclick="goToLog3('t7-k5')" class="bdd_a"><span class="status green">PASS</span> <span class="st">Teardown</span> Teardown For TMD-23268-3</p>
+        </div>
+</body>
+<script>
+function goToLog3(step) {
+  location.href = "./report/log.html#s1-s1-s1-s1-"+step;
+}
+</script>
+</html>
